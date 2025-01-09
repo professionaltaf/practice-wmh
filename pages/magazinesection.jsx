@@ -1,85 +1,125 @@
-import Image from "next/image";
-import Link from "next/link";
+import React from "react";
 
 const MagazineSection = () => {
   const magazines = [
     {
-      title: "January 2025 Issue",
-      description:
-        "Explore the latest trends in fashion, makeup, and beauty with our January 2025 issue.",
-      image: "/model9.jpg", // Replace with actual image path
-      link: "/magazine/january-2025", // Buy/Read more link
+      title: "January 2025 Magazine",
+      issue: "Issue 49",
+      date: "7 January 2025",
+      coverImage: "/model5.jpg",
+      exclusive: true,
+      description: "Redefine your wardrobe with Indian fashion trends.",
     },
     {
-      title: "December 2024 Issue",
-      description:
-        "The December edition brings you holiday glam, beauty tips, and exclusive interviews.",
-      image: "/model10.jpg",
-      link: "/magazine/december-2024",
-    },
-    {
-      title: "November 2024 Issue",
-      description:
-        "Get inspired by our fall fashion and discover what's trending this season.",
-      image: "/model11.jpg",
-      link: "/magazine/november-2024",
-    },
-    {
-      title: "October 2024 Issue",
-      description:
-        "Dive into the world of fashion and beauty with our special October edition.",
-      image: "/model12.jpg",
-      link: "/magazine/october-2024",
+      title: "December 2024 Magazine",
+      issue: "Issue 48",
+      date: "10 December 2024",
+      coverImage: "/model2.jpg",
+      exclusive: true,
+      description: "The evolution of fashion week and runway modeling over Khadi.",
     },
   ];
 
   return (
-    <section className="bg-black text-white py-16">
-      <div className="container mx-auto px-4 md:px-8">
-        {/* Section Title */}
-        <div className="text-center mb-12">
-          <p className="text-lg text-[#EE2229] uppercase tracking-widest">
-            Latest Editions
+    <div className="bg-black text-white py-12">
+      <div className="max-w-5xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Main Content */}
+        <div className="lg:col-span-2">
+          <h2 className="text-4xl font-bold mb-6">Magazine</h2>
+          <p className="text-gray-300 mb-8">
+            Among the essential components of the fashion world, magazines are
+            one of the vital categories. Likewise, the magazine of World Model
+            Hunt India adds spice to your meal. It plays a significant part in
+            connecting your fashion perception with the fashion community. If
+            you've got to examine the fashion magazine of World Model Hunt
+            India, subscribe today and stimulate your fashion sense.
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2">Magazine Section</h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {magazines.map((magazine, index) => (
+              <div
+                key={index}
+                className="bg-gray-800 p-4 rounded-lg hover:shadow-lg"
+              >
+                <div className="relative">
+                  <img
+                    src={magazine.coverImage}
+                    alt={magazine.title}
+                    className="w-full h-80 object-cover rounded-lg"
+                  />
+                  {magazine.exclusive && (
+                    <div className="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded">
+                      EXCLUSIVE
+                    </div>
+                  )}
+                </div>
+                <h3 className="text-lg font-bold mt-4">{magazine.title}</h3>
+                <p className="text-sm text-gray-400 mt-1">{magazine.issue}</p>
+                <p className="text-sm text-gray-400">{magazine.date}</p>
+                <p className="text-gray-300 mt-2">{magazine.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Magazine Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {magazines.map((magazine, index) => (
-            <div
-              key={index}
-              className="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition"
-            >
-              {/* Magazine Cover Image */}
-              <div className="relative w-full h-80">
-                <Image
-                  src={magazine.image}
-                  alt={magazine.title}
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
-
-              {/* Magazine Details */}
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-semibold mb-4">{magazine.title}</h3>
-                <p className="text-gray-400 text-sm mb-6">
-                  {magazine.description}
-                </p>
-
-                {/* Buy/Preview Link */}
-                <Link href={magazine.link} passHref>
-                  <span className="bg-[#EE2229] text-black px-6 py-3 rounded-full font-semibold hover:bg-[#b57d6e] cursor-pointer transition">
-                    View Issue
-                  </span>
-                </Link>
-              </div>
+        {/* Sidebar */}
+        <div>
+          {/* Search Box */}
+          <div className="bg-gray-800 p-4 rounded-lg mb-6">
+            <h3 className="text-lg font-bold mb-4">Search</h3>
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search..."
+                className="w-full bg-gray-900 text-white px-4 py-2 rounded-lg"
+              />
+              <button className="absolute top-0 right-0 bg-red-600 text-white px-4 py-2 rounded-lg">
+                🔍
+              </button>
             </div>
-          ))}
+          </div>
+
+          {/* Social Share */}
+          <div className="bg-gray-800 p-4 rounded-lg mb-6">
+            <h3 className="text-lg font-bold mb-4">Share</h3>
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-400 hover:text-red-600">
+                Facebook
+              </a>
+              <a href="#" className="text-gray-400 hover:text-red-600">
+                Instagram
+              </a>
+              <a href="#" className="text-gray-400 hover:text-red-600">
+                Twitter
+              </a>
+              <a href="#" className="text-gray-400 hover:text-red-600">
+                LinkedIn
+              </a>
+            </div>
+          </div>
+
+          {/* Recent Magazines */}
+          <div className="bg-gray-800 p-4 rounded-lg">
+            <h3 className="text-lg font-bold mb-4">Recent Magazines</h3>
+            {magazines.map((magazine, index) => (
+              <div key={index} className="mb-4">
+                <div className="flex items-start">
+                  <img
+                    src={magazine.coverImage}
+                    alt={magazine.title}
+                    className="w-16 h-20 object-cover rounded-lg mr-4"
+                  />
+                  <div>
+                    <h4 className="text-sm font-bold">{magazine.title}</h4>
+                    <p className="text-xs text-gray-400">{magazine.date}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

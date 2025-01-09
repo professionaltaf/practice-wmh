@@ -34,8 +34,8 @@ const RecentSection = () => {
   ];
 
   return (
-    <section className="bg-black text-white py-16">
-      <div className="container mx-auto px-4 md:px-8">
+    <section className="bg-gray-950 text-white py-16">
+      <div className="container mx-auto px-4 md:px-8 max-w-5xl">
         {/* Section Title */}
         <div className="text-center mb-12">
           <p className="text-lg text-[#EE2229] uppercase tracking-widest">

@@ -36,8 +36,8 @@ const Hero = () => {
   const currentContent = featuredContent[currentIndex];
 
   return (
-    <section className="relative h-screen overflow-hidden">
-      <div className="absolute inset-0">
+    <section className="relative h-screen overflow-hidden bg-gray-950">
+      <div className="absolute inset-0 max-w-5xl mx-auto">
         <Image
           src={currentContent.image}
           alt={currentContent.title}
@@ -56,7 +56,7 @@ const Hero = () => {
             {currentContent.description}
           </p>
           <Link href={currentContent.link} passHref>
-            <span className="bg-[#EE2229] text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-[#f43f5e] transition-all duration-300 cursor-pointer">
+            <span className="bg-[#EE2229] text-black px-8 py-4 rounded-full text-lg font-medium hover:bg-[white] transition-all duration-300 cursor-pointer">
               Read More
             </span>
           </Link>

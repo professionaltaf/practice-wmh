@@ -5,6 +5,9 @@ import Trendingsection from "./trendingsection";
 import Hero from "./hero";
 import MagazineSection from "./magazinesection";
 import RecentSection from "./recentsection";
+import blog from "./blog";
+import blognext from "./blognext";
+
 
 export default function App({ Component, pageProps }) {
   return (
@@ -15,6 +18,8 @@ export default function App({ Component, pageProps }) {
       <Trendingsection></Trendingsection>
       <MagazineSection></MagazineSection>
       <RecentSection></RecentSection>
+      <blog></blog>
+      <blognext></blognext>
       <Footer/>
     </>
   );

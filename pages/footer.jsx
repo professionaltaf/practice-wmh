@@ -1,167 +1,118 @@
+import React from 'react';
+import { Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
+
 const Footer = () => {
-    return (
-      <footer className="bg-[#101010] text-white py-12">
-        <div className="container mx-auto px-6 lg:px-12">
-          {/* Footer Sections */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-            {/* Company Info */}
-            <div>
-              <div className="flex items-center space-x-3">
-                <img
-                  src="/wmh-logo.webp" // Replace with your logo path
-                  alt="Logo"
-                  className="h-10 w-40"
-                />
-                {/* <span className="text-2xl font-bold">GMAKEUP.</span> */}
-              </div>
-              <p className="text-gray-400 mt-4 text-sm leading-relaxed">
-              Elevate your brand's reach and impact with our "Advertise with Us" opportunity. Promote your products and services to our diverse, engaged audience, spanning across industries and demographics. Our platform offers targeted advertising that ensures your message resonates.
-              </p>
-            </div>
-  
-            {/* Links */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4">OUR LINKS</h3>
-              <ul className="text-gray-400 space-y-2">
-                <li>
-                  <a href="/" className="hover:text-white">Home</a>
-                </li>
-                <li>
-                  <a href="/blog" className="hover:text-white">Blogs</a>
-                </li>
-                <li>
-                  <a href="/magazine" className="hover:text-white">Magazine</a>
-                </li>
-                <li>
-                  <a href="/contact" className="hover:text-white">Interviews</a>
-                </li>
-              </ul>
-            </div>
-  
-            {/* Services */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4">OUR SERVICES</h3>
-              <ul className="text-gray-400 space-y-2">
-                <li>
-                  <a href="#" className="hover:text-white">FAQ</a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">Support</a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">Privacy</a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">Terms & Conditions</a>
-                </li>
-              </ul>
-            </div>
-  
-            {/* Contact Info */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4">CONTACT US</h3>
-              <ul className="text-gray-400 space-y-4">
-                <li className="flex items-center space-x-3">
-                  <span className="bg-[#EE2229] p-2 rounded-full">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 text-black"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 10h11M9 21V3m9 11h-4m0 0V5a2 2 0 112 2v6z"
-                      />
-                    </svg>
-                  </span>
-                  <div>
-                    <p>1800-121-3637</p>
-                    <p>+91-7052-101-786</p>
-                  </div>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <span className="bg-[#EE2229] p-2 rounded-full">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 text-black"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M16 12h4m0 0V6m0 6l-6-6M4 12l6 6"
-                      />
-                    </svg>
-                  </span>
-                  <div>
-                    <p>info@example.com</p>
-                    <p>help@example.com</p>
-                  </div>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <span className="bg-[#EE2229] p-2 rounded-full">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 text-black"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M16 12h4M4 12h8m8 0l-6 6M4 12l6-6"
-                      />
-                    </svg>
-                  </span>
-                  <p>1247/Plot No. 39, LHB Colony, Kanpur</p>
-                </li>
-              </ul>
-            </div>
-  
-            {/* Newsletter */}
-            <div>
-              <h3 className="text-lg font-semibold mb-4">SUBSCRIBE TO OUR NEWSLETTER</h3>
-              <div>
-                <iframe
-                  src="https://maps.google.com/maps?q=plexus%20worldwide&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                  width="100%"
-                  height="150"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  title="Google Map"
-                ></iframe>
-              </div>
-            </div>
-          </div>
-  
-          {/* Footer Bottom */}
-          <div className="mt-12 border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-gray-400">
-              Copyright © {new Date().getFullYear()} Zcubedesign. All rights reserved.
-            </p>
-            <div className="text-sm text-gray-400 space-x-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-white">
-                Privacy
-              </a>
-              <a href="#" className="hover:text-white">
-                Terms & Conditions
-              </a>
-            </div>
+  const links = {
+    useful: [
+      { label: 'About Us', href: '/about' },
+      { label: 'Contact Us', href: '/contact' },
+      { label: 'Glossary', href: '/glossary' },
+      { label: 'Privacy Policy', href: '/privacy' },
+      { label: 'Terms of use', href: '/terms' },
+      { label: 'Consent', href: '/consent' },
+      { label: 'Get Published', href: '/publish' },
+      { label: 'Talent-Management', href: '/talent' },
+    ],
+    social: [
+      { icon: Facebook, href: '#' },
+      { icon: Instagram, href: '#' },
+      { icon: Youtube, href: '#' },
+      { icon: Linkedin, href: '#' },
+    ],
+  };
+
+  return (
+    <footer className="bg-black text-white py-8">
+      <div className="max-w-5xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
+        {/* Latest Magazine */}
+        <div>
+          <h3 className="text-xl font-bold mb-4">Magazine</h3>
+          <div className="relative">
+            <div className="bg-red-600 text-white text-xs px-2 py-1 absolute top-0 left-0">EXCLUSIVE</div>
+            <img
+              src="/model5.jpg"
+              alt="January 2025 Magazine"
+              className="w-48 h-64 object-cover"
+            />
+            <p className="mt-2">January 2025 Magazine</p>
           </div>
         </div>
-      </footer>
-    );
-  };
-  
-  export default Footer;
-  
+
+        {/* Latest Blog */}
+        <div>
+          <h3 className="text-xl font-bold mb-4">Blog</h3>
+          <div>
+            <img
+              src="/model6.jpg"
+              alt="Fashion Blog"
+              className="w-48 h-64 object-cover"
+            />
+            <p className="mt-2">Redefine your Wardrobe with Indian Fashion Trends</p>
+          </div>
+        </div>
+
+        {/* Useful Links */}
+        <div>
+          <h3 className="text-xl font-bold mb-4">Useful Links</h3>
+          <ul className="grid grid-cols-1 sm:grid-cols-1 gap-2">
+            {links.useful.map((link) => (
+              <li key={link.label}>
+                <a href={link.href} className="hover:text-gray-300 transition-colors">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Subscribe & Social */}
+        <div>
+          <div className="mb-8">
+            <h3 className="text-xl font-bold mb-4">Subscribe</h3>
+            <div className="flex">
+              <input
+                type="email"
+                placeholder="Your email address"
+                className="bg-gray-800 text-white px-4 py-2 flex-grow"
+              />
+              <button className="bg-red-600 text-white px-4 py-2">
+                Subscribe
+              </button>
+            </div>
+            <p className="text-sm mt-2">
+              I've read and accept the{' '}
+              <a href="/privacy" className="text-red-600">
+                Privacy Policy
+              </a>
+            </p>
+          </div>
+          <div className="mt-8">
+            <img
+              src="/isn.webp"
+              alt="ISSN 2690-0246"
+              className="w-36"
+            />
+          </div>
+
+          {/* Social Links */}
+          <div className="flex space-x-4 mt-8">
+            {links.social.map((social, index) => {
+              const Icon = social.icon;
+              return (
+                <a
+                  key={index}
+                  href={social.href}
+                  className="text-white hover:text-gray-300 transition-colors"
+                >
+                  <Icon size={30} />
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

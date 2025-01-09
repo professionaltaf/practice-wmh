@@ -9,8 +9,8 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-black text-white py-4">
-      <div className="container mx-auto flex items-center justify-between px-4 md:px-8">
+    <header className="bg-black text-white py-4 ">
+      <div className="container mx-auto flex items-center justify-between px-4 md:px-8 max-w-5xl ">
         {/* Logo Section */}
         <div className="flex items-center space-x-3">
           <img
@@ -22,15 +22,16 @@ const Header = () => {
         </div>
 
         {/* Navigation Links for larger screens */}
-        <nav className="hidden md:flex space-x-8">
-          <Link href="/">HOME</Link>
-          <Link href="/blogs">BLOGS</Link>
-          <Link href="/magazine">MAGAZINE</Link>
-          <Link href="/interviews">INTERVIEWS</Link>
-          <Link href="/features">FEATURES</Link>
+        <nav className="hidden md:flex space-x-6 font-sans text-md">
+          <Link className=" hover:text-red-500 ease-in transition-all duration-300" href="/">HOME</Link>
+          <Link className=" hover:text-red-500 ease-in transition-all duration-300" href="/blognext">BLOGS</Link>
+          <Link className=" hover:text-red-500 ease-in transition-all duration-300" href="/magazinesection">MAGAZINE</Link>
+          <Link className=" hover:text-red-500 ease-in transition-all duration-300" href="/interviews">INTERVIEWS</Link>
+          <Link className=" hover:text-red-500 ease-in transition-all duration-300" href="/features">TALK SHOW</Link>
+          <Link className=" hover:text-red-500 ease-in transition-all duration-300" href="/features">GET PUBLISHED</Link>
         </nav>
 
-        {/* Get a Quote Button */}
+        {/* Get a Quote Button
         <div className="hidden md:block">
           <Link
             href="/quote"
@@ -38,7 +39,7 @@ const Header = () => {
           >
             GET A QUOTE
           </Link>
-        </div>
+        </div> */}
 
         {/* Mobile Menu Icon */}
         <div className="md:hidden">
@@ -97,7 +98,7 @@ const Header = () => {
                 FEATURES
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 href="/quote"
                 className="bg-[#EE2229] text-black px-4 py-2 rounded-full font-semibold hover:bg-[#b57d6e] transition"
@@ -105,7 +106,7 @@ const Header = () => {
               >
                 GET A QUOTE
               </Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
       )}
