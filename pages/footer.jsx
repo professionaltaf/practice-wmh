@@ -102,15 +102,28 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.href}
-                  className="text-white hover:text-gray-300 transition-colors"
+                  className="text-red-900 hover:text-gray-300 transition-colors"
                 >
-                  <Icon size={30} />
+                  <Icon size={25} />
                 </a>
               );
             })}
           </div>
         </div>
       </div>
+      <div className="mt-12 border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-center items-center text-center">
+            <p className="text-sm text-gray-400">
+              Copyright © {new Date().getFullYear()} <span className='text-red-700'>WMH INDIA</span> . All rights reserved.
+            </p>
+            <div className="text-sm text-gray-400 space-x-6 mt-4 md:mt-0">
+              <a href="#" className="hover:text-white">
+                Privacy
+              </a>
+              <a href="#" className="hover:text-white">
+                Terms & Conditions
+              </a>
+            </div>
+          </div>
     </footer>
   );
 };

@@ -41,7 +41,7 @@ const RecentSection = () => {
           <p className="text-lg text-[#EE2229] uppercase tracking-widest">
             Recent Highlights
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2">Recent Blogs & Interviews</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mt-2">Recent Blogs</h2>
         </div>
 
         {/* Recent Posts Grid */}

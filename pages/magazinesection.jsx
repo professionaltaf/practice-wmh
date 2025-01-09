@@ -1,9 +1,28 @@
 import React from "react";
+import { Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
 
 const MagazineSection = () => {
+  const links = {
+      useful: [
+        { label: 'About Us', href: '/about' },
+        { label: 'Contact Us', href: '/contact' },
+        { label: 'Glossary', href: '/glossary' },
+        { label: 'Privacy Policy', href: '/privacy' },
+        { label: 'Terms of use', href: '/terms' },
+        { label: 'Consent', href: '/consent' },
+        { label: 'Get Published', href: '/publish' },
+        { label: 'Talent-Management', href: '/talent' },
+      ],
+      social: [
+        { icon: Facebook, href: '#' },
+        { icon: Instagram, href: '#' },
+        { icon: Youtube, href: '#' },
+        { icon: Linkedin, href: '#' },
+      ],
+    };
   const magazines = [
     {
-      title: "January 2025 Magazine",
+      title: "Latest News",
       issue: "Issue 49",
       date: "7 January 2025",
       coverImage: "/model5.jpg",
@@ -11,7 +30,7 @@ const MagazineSection = () => {
       description: "Redefine your wardrobe with Indian fashion trends.",
     },
     {
-      title: "December 2024 Magazine",
+      title: "Get Published",
       issue: "Issue 48",
       date: "10 December 2024",
       coverImage: "/model2.jpg",
@@ -80,27 +99,27 @@ const MagazineSection = () => {
           </div>
 
           {/* Social Share */}
-          <div className="bg-gray-800 p-4 rounded-lg mb-6">
+          <div className="bg-gray-800 p-2 rounded-lg mb-6">
             <h3 className="text-lg font-bold mb-4">Share</h3>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-red-600">
-                Facebook
-              </a>
-              <a href="#" className="text-gray-400 hover:text-red-600">
-                Instagram
-              </a>
-              <a href="#" className="text-gray-400 hover:text-red-600">
-                Twitter
-              </a>
-              <a href="#" className="text-gray-400 hover:text-red-600">
-                LinkedIn
-              </a>
-            </div>
+            <div className="flex space-x-4 mt-2">
+            {links.social.map((social, index) => {
+              const Icon = social.icon;
+              return (
+                <a
+                  key={index}
+                  href={social.href}
+                  className="text-red-900 hover:text-white transition-colors p-2"
+                >
+                  <Icon size={30} />
+                </a>
+              );
+            })}
+          </div>
           </div>
 
           {/* Recent Magazines */}
-          <div className="bg-gray-800 p-4 rounded-lg">
-            <h3 className="text-lg font-bold mb-4">Recent Magazines</h3>
+          <div className="bg-gray-800 p-20 rounded-lg">
+            <h3 className="text-lg font-bold mb-4">Advertising box for Ads</h3>
             {magazines.map((magazine, index) => (
               <div key={index} className="mb-4">
                 <div className="flex items-start">
@@ -115,7 +134,9 @@ const MagazineSection = () => {
                   </div>
                 </div>
               </div>
+              
             ))}
+            
           </div>
         </div>
       </div>

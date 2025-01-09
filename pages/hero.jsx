@@ -1,77 +1,137 @@
 import Image from "next/image";
-import Link from "next/link";
-import { useState, useEffect } from "react";
 
-const featuredContent = [
-  {
-    title: "Top 10 Beauty Trends for 2025",
-    description: "Discover the latest beauty trends that will define the upcoming year.",
-    image: "/model10.jpg",
-    link: "/blog/top-beauty-trends-2025",
-  },
-  {
-    title: "Exclusive Interview: Model of the Year",
-    description: "Dive into the journey and success of the leading model this year.",
-    image: "/model11.jpg",
-    link: "/interviews/model-of-the-year",
-  },
-  {
-    title: "Fashion Week Highlights",
-    description: "Catch the most stunning moments from this season’s fashion week.",
-    image: "/model12.jpg",
-    link: "/blog/fashion-week-highlights",
-  },
-];
-
-const Hero = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % featuredContent.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const currentContent = featuredContent[currentIndex];
-
+export default function Hero() {
   return (
-    <section className="relative h-screen overflow-hidden bg-gray-950">
-      <div className="absolute inset-0 max-w-5xl mx-auto">
-        <Image
-          src={currentContent.image}
-          alt={currentContent.title}
-          layout="fill"
-          objectFit="cover"
-          className="transition-opacity duration-700 ease-in-out"
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-      </div>
-      <div className="container mx-auto px-6 md:px-12 relative z-10 flex items-center justify-center h-full">
-        <div className="text-center max-w-3xl">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6">
-            {currentContent.title}
-          </h1>
-          <p className="text-lg md:text-2xl text-gray-300 mb-8">
-            {currentContent.description}
-          </p>
-          <Link href={currentContent.link} passHref>
-            <span className="bg-[#EE2229] text-black px-8 py-4 rounded-full text-lg font-medium hover:bg-[white] transition-all duration-300 cursor-pointer">
-              Read More
+    <div className="min-h-screen flex flex-col justify-between bg-black ">
+      <div className="relative w-full max-w-5xl p-4 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center py-0 mx-auto mt-20">
+        {/* Left Side Images */}
+        <div className="grid grid-cols-2 gap-4">
+          {/* Image 1 */}
+          <div className="relative group border border-transparent hover:border-red-500 rounded-lg transition-all duration-300">
+            <Image
+              src="/model1.jpg" // Replace with your image path
+              alt="Fashion Image 1"
+              layout="responsive"
+              width={400}
+              height={600} // Increased height
+              className="rounded-lg object-cover shadow-md group-hover:scale-105 transform transition-all duration-300"
+            />
+            <div className="absolute bottom-0 left-0 w-full bg-white bg-opacity-70 p-2 rounded-lg">
+              <p className="text-sm text-gray-800 text-center">Image 1 Description</p>
+            </div>
+          </div>
+
+          {/* Image 2 */}
+          <div className="relative group border border-transparent hover:border-red-500 rounded-lg transition-all duration-300">
+            <Image
+              src="/model2.jpg" // Replace with your image path
+              alt="Fashion Image 2"
+              layout="responsive"
+              width={400}
+              height={600} // Increased height
+              className="rounded-lg object-cover shadow-md group-hover:scale-105 transform transition-all duration-300"
+            />
+            <div className="absolute bottom-0 left-0 w-full bg-white bg-opacity-70 p-2 rounded-lg">
+              <p className="text-sm text-gray-800 text-center">Image 2 Description</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Center WMH India and Subscribe Section */}
+        <div className="flex flex-col items-center text-center space-y-6">
+          {/* Heading */}
+          <h1 className="text-2xl md:text-4xl font-bold text-white">
+            <span className="text-rose-500 font-bold">WMH</span> INDIA <br />
+            <span className="font-light text-lg">
+              Sports | Events | Talents | Management
             </span>
-          </Link>
+          </h1>
+
+          {/* Subscription Form */}
+          <div className="bg-black bg-opacity-90 p-6 rounded-lg shadow-lg">
+            <form className="space-y-2 flex flex-col items-center">
+              {/* Email Input */}
+              <div>
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  className="w-64 p-2 text-sm rounded-md bg-gray-800 text-gray-200 placeholder-gray-400 focus:ring-2 focus:ring-red-500 focus:outline-none"
+                  required
+                />
+              </div>
+
+              {/* Subscribe Button */}
+              <div>
+                <button
+                  type="submit"
+                  className="w-64 py-2 text-sm rounded-md bg-red-600 text-white font-medium hover:bg-red-700 transition duration-300"
+                >
+                  Subscribe
+                </button>
+              </div>
+
+              {/* Privacy Policy */}
+              <div className="flex items-center justify-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="privacy-policy"
+                  className="h-3 w-3 text-red-600 border-gray-600 focus:ring-red-500"
+                  required
+                />
+                <label htmlFor="privacy-policy" className="text-gray-200 text-xs">
+                  I’ve read and accept the{" "}
+                  <a href="#" className="text-red-500 underline">
+                    Privacy Policy
+                  </a>
+                  .
+                </label>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        {/* Right Side Images */}
+        <div className="grid grid-cols-2 gap-4">
+          {/* Image 3 */}
+          <div className="relative group border border-transparent hover:border-red-500 rounded-lg transition-all duration-300">
+            <Image
+              src="/model2.jpg" // Replace with your image path
+              alt="Fashion Image 3"
+              layout="responsive"
+              width={400}
+              height={600} // Increased height
+              className="rounded-lg object-cover shadow-md group-hover:scale-105 transform transition-all duration-300"
+            />
+            <div className="absolute bottom-0 left-0 w-full bg-white bg-opacity-70 p-2 rounded-lg">
+              <p className="text-sm text-gray-800 text-center">Image 3 Description</p>
+            </div>
+          </div>
+
+          {/* Image 4 */}
+          <div className="relative group border border-transparent hover:border-red-500 rounded-lg transition-all duration-300">
+            <Image
+              src="/model1.jpg" // Replace with your image path
+              alt="Fashion Image 4"
+              layout="responsive"
+              width={400}
+              height={600} // Increased height
+              className="rounded-lg object-cover shadow-md group-hover:scale-105 transform transition-all duration-300"
+            />
+            <div className="absolute bottom-0 left-0 w-full bg-white bg-opacity-70 p-2 rounded-lg">
+              <p className="text-sm text-gray-800 text-center">Image 4 Description</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-3">
-        {featuredContent.map((_, index) => (
-          <span
-            key={index}
-            className={`block w-4 h-4 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-white' : 'bg-gray-500'}`}
-          ></span>
-        ))}
-      </div>
-    </section>
-  );
-};
 
-export default Hero;
+      {/* Advertisement Box */}
+      <div className="bg-gray-800 text-white py-6 w-full text-center">
+        <h3 className="text-lg font-bold">Advertise With Us</h3>
+        <p className="text-sm text-gray-400">Promote your brand with WMH India. Reach a global audience today!</p>
+        <button className="mt-4 px-6 py-2 bg-red-600 rounded-md text-white hover:bg-red-700 transition duration-300">
+          Learn More
+        </button>
+      </div>
+    </div>
+  );
+}
