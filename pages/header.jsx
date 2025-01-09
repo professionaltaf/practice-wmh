@@ -36,7 +36,7 @@ const Header = () => {
             href="/quote"
             className="bg-[#EE2229] text-black px-6 py-2 rounded-full font-semibold hover:bg-[#b57d6e] transition"
           >
-            GET A QUOTE
+            Mode
           </Link>
         </div>
 

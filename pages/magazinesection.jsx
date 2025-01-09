@@ -7,8 +7,8 @@ const MagazineSection = () => {
       title: "January 2025 Issue",
       description:
         "Explore the latest trends in fashion, makeup, and beauty with our January 2025 issue.",
-      image: "/model9.jpg", // Replace with actual image path
-      link: "/magazine/january-2025", // Buy/Read more link
+      image: "/model3.jpg",
+      link: "/magazine/january-2025",
     },
     {
       title: "December 2024 Issue",
@@ -44,33 +44,34 @@ const MagazineSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold mt-2">Magazine Section</h2>
         </div>
 
-        {/* Magazine Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Magazine List */}
+        <div className="space-y-12">
           {magazines.map((magazine, index) => (
             <div
               key={index}
-              className="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition"
+              className={`flex flex-col md:flex-row items-center ${
+                index % 2 === 0 ? "md:flex-row-reverse" : ""
+              }`}
             >
-              {/* Magazine Cover Image */}
-              <div className="relative w-full h-80">
+              {/* Magazine Image */}
+              <div className="relative w-full md:w-1/2 h-80 md:h-96">
                 <Image
                   src={magazine.image}
                   alt={magazine.title}
                   layout="fill"
                   objectFit="cover"
+                  className="rounded-lg shadow-lg"
                 />
               </div>
 
-              {/* Magazine Details */}
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-semibold mb-4">{magazine.title}</h3>
-                <p className="text-gray-400 text-sm mb-6">
+              {/* Magazine Content */}
+              <div className="md:w-1/2 p-6 md:pl-12 text-center md:text-left">
+                <h3 className="text-2xl font-bold mb-4">{magazine.title}</h3>
+                <p className="text-gray-400 text-sm mb-6 leading-relaxed">
                   {magazine.description}
                 </p>
-
-                {/* Buy/Preview Link */}
                 <Link href={magazine.link} passHref>
-                  <span className="bg-[#EE2229] text-black px-6 py-3 rounded-full font-semibold hover:bg-[#b57d6e] cursor-pointer transition">
+                  <span className="bg-[#EE2229] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#b57d6e] cursor-pointer transition">
                     View Issue
                   </span>
                 </Link>
