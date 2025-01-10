@@ -22,8 +22,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black text-white py-8">
-      <div className="max-w-5xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
+    <footer className="bg-black text-white py-8 container mx-auto">
+      <div className=" px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
         {/* Latest Magazine */}
         <div>
           <h3 className="text-xl font-bold mb-4">Magazine</h3>

@@ -34,8 +34,8 @@ const TrendingSection = () => {
   ];
 
   return (
-    <section className="bg-gray-950 text-white py-16 relative">
-      <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-5xl">
+    <section className=" text-white py-16 relative container mx-auto">
+      <div className=" px-6 md:px-12 relative z-10 ">
         <div className="text-center mb-12">
           <p className="text-md text-[#EE2229] uppercase tracking-widest font-bold">
             Trending Now

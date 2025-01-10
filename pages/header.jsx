@@ -9,14 +9,14 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-black text-white py-4 ">
-      <div className="container mx-auto flex items-center justify-between px-4 md:px-8 max-w-5xl ">
+    <header className="bg-black text-white py-12 container mx-auto ">
+      <div className="container mx-auto flex items-center justify-between px-4 md:px-8 ">
         {/* Logo Section */}
         <div className="flex items-center space-x-3">
           <img
             src="/wmh-logo.webp" // Replace with your logo path
             alt="WMH Logo"
-            className="h-8 w-40"
+            className="h-12"
           />
           {/* <span className="text-lg font-bold">WORLD MODEL HUNT</span> */}
         </div>
