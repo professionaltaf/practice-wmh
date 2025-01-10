@@ -8,7 +8,7 @@ export default function Hero() {
         {/* Left Side Images */}
         <div className="grid grid-cols-2 gap-4">
           {/* Image 1 */}
-          <div className="relative group border border-transparent hover:border-red-900 rounded-lg transition-all duration-300 h-[600px] flex object-contain"> {/* Increased height */}
+          <div className="relative group border border-transparent hover:border-[#EE2229] rounded-lg transition-all duration-300 h-[600px] flex object-contain"> {/* Increased height */}
             <Image
               src="/interview image1.webp"
               alt="Fashion Image 1"
@@ -18,12 +18,18 @@ export default function Hero() {
               className="rounded-lg object-cover shadow-md group-hover:scale-105 transform transition-all duration-300"
             />
             <div className="absolute bottom-0 left-0 w-full bg-white bg-opacity-70 p-2 rounded-lg">
-              <p className="text-sm text-gray-800 text-center">Gargi Duggal’s Journey from Gujarat to Global Success</p>
+            <Link href="/exclusive" legacyBehavior>
+              <a className="hover:text-[#EE2229] transition-colors duration-300 block ">
+              <span className="text-white bg-gray-500 hover:bg-[#EE2229] rounded-sm p-1">Interview</span>
+                
+              <p className="text-lg text-black text-center"><span className=" text-sm">Exclusive</span> Gargi Duggal’s Journey from Gujarat to Global Success</p>
+              </a>
+            </Link>
             </div>
           </div>
 
           {/* Image 2 */}
-          <div className="relative group border border-transparent hover:border-red-500 rounded-lg transition-all duration-300 h-[600px] flex object-contain"> {/* Increased height */}
+          <div className="relative group border border-transparent hover:border-[#EE2229] rounded-lg transition-all duration-300 h-[600px] flex object-contain"> {/* Increased height */}
             <Image
               src="/interview image2.webp"
               alt="Fashion Image 2"
@@ -33,8 +39,13 @@ export default function Hero() {
               className="rounded-lg object-cover shadow-md group-hover:scale-105 transform transition-all duration-300"
             />
             <div className="absolute bottom-0 left-0 w-full bg-white bg-opacity-70 p-2 rounded-lg">
-              <p className="text-sm text-gray-800 text-center">
-              Revolutionizing the Runway: A Candid Conversation with Fashion Maverick Anjali Phougat</p>
+            <Link href="/exclusive" legacyBehavior>
+              <a className="hover:text-[#EE2229] transition-colors duration-300 block ">
+              <span className="text-white bg-gray-500 hover:bg-[#EE2229] rounded-sm p-1">Interview</span>
+                
+              <p className="text-lg text-black text-center"><span className=" text-sm">Exclusive</span> Revolutionizing the Runway: A Candid Conversation with Fashion Maverick Anjali Phougat</p>
+              </a>
+            </Link>
             </div>
           </div>
         </div>
@@ -60,7 +71,7 @@ export default function Hero() {
               />
               <button
                 type="submit"
-                className="w-64 py-2 text-sm rounded-md bg-red-600 text-white font-medium hover:bg-red-700 transition duration-300"
+                className="w-64 py-2 text-sm rounded-md bg-[#EE2229] text-white font-medium hover:bg-[#EE2229] transition duration-300"
               >
                 Subscribe
               </button>
@@ -68,7 +79,7 @@ export default function Hero() {
                 <input
                   type="checkbox"
                   id="privacy-policy"
-                  className="h-3 w-3 text-red-600 border-gray-600 focus:ring-red-500"
+                  className="h-3 w-3 text-[#EE2229] border-gray-600 focus:ring-[#EE2229]"
                   required
                 />
                 <label
@@ -76,7 +87,7 @@ export default function Hero() {
                   className="text-gray-200 text-xs"
                 >
                   I’ve read and accept the{" "}
-                  <a href="#" className="text-red-500 underline">
+                  <a href="#" className="text-[#EE2229] underline">
                     Privacy Policy
                   </a>
                   .
@@ -89,7 +100,7 @@ export default function Hero() {
         {/* Right Side Images */}
         <div className="grid grid-cols-2 gap-4 ">
           {/* Image 3 */}
-          <div className="relative group border border-transparent hover:border-red-900 rounded-lg transition-all duration-300 h-[600px] flex object-contain "> {/* Increased height */}
+          <div className="relative group border border-transparent hover:border-[#EE2229]rounded-lg transition-all duration-300 h-[600px] flex object-contain "> {/* Increased height */}
             <Image
               src="/interview image3.webp"
               alt="Fashion Image 3"
@@ -100,9 +111,10 @@ export default function Hero() {
             />
             <div className="absolute bottom-0 left-0 w-full bg-white bg-opacity-70 p-2 rounded-lg">
             <Link href="/exclusive" legacyBehavior>
-              <a className="hover:text-red-500 transition-colors duration-300 block ">
-                Exclusive 
-              <p className="text-sm text-black text-center">Fashion for me is keeping up with the change”, Nikita Singh Tomar, Fashion Modely</p>
+              <a className="hover:text-[#EE2229] transition-colors duration-300 block ">
+              <span className="text-white bg-gray-500 hover:bg-[#EE2229] rounded-sm p-1">Interview</span>
+                
+              <p className="text-lg text-black text-center"><span className=" text-sm">Exclusive</span> “Fashion for me is keeping up with the change”, Nikita Singh Tomar, Fashion Model</p>
               </a>
             </Link>
               
@@ -110,7 +122,7 @@ export default function Hero() {
           </div>
 
           {/* Image 4 */}
-          <div className="relative group border border-transparent hover:border-red-500 rounded-lg transition-all duration-300 h-[600px] flex object-contain"> {/* Increased height */}
+          <div className="relative group border border-transparent hover:border-[#EE2229] rounded-lg transition-all duration-300 h-[600px] flex object-contain"> {/* Increased height */}
             <Image
               src="/interview image4.webp"
               alt="Fashion Image 4"
@@ -122,9 +134,9 @@ export default function Hero() {
             <div className="absolute bottom-0 left-0 w-full bg-white bg-opacity-70 p-2 rounded-lg">
             <Link href="/exclusive" legacyBehavior>
               <a className="hover:text-red-500 transition-colors duration-300 block ">
-                <p>Interview</p>
+                <span className="text-white bg-gray-500 hover:bg-red-700 rounded-sm p-1">Interview</span>
                 
-              <p className="text-lg text-black text-center"><span className=" text-sm">Exclusive</span> Interview with Mannat Kaur: A Rising Star in the Delhi Makeup Industry</p>
+              <p className="text-lg text-black text-center "><span className=" text-sm">Exclusive</span> Interview with Mannat Kaur: A Rising Star in the Delhi Makeup Industry</p>
               </a>
             </Link>
              
